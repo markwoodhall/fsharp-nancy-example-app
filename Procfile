@@ -1,0 +1,1 @@
+﻿web: mono webserver/bin/Debug/app.exe

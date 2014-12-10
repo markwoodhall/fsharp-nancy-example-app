@@ -1,0 +1,4 @@
+webserver/bin
+webserver/obj
+packages/*
+*.userprefs
