@@ -1,2 +1,0 @@
-default_process_types:
-  web: mono webserver/bin/Debug/webserver.exe
