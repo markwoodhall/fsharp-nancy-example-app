@@ -14,7 +14,6 @@ let main args =
     let env_port = Environment.GetEnvironmentVariable("PORT")
     let port = if env_port = null then "5000" else env_port
     let localUri = "http://localhost:" + port
-    let productionUri = "http://mono1.do.daves.rocks:80"
     let nancy_host = new Nancy.Hosting.Self.NancyHost(Uri(localUri))
     nancy_host.Start()
     printfn "listening on %s" localUri
