@@ -13,8 +13,9 @@ type DemoApp () =
 let main args = 
     let env_port = Environment.GetEnvironmentVariable("PORT")
     let port = if env_port = null then "5000" else env_port
-
-    let nancy_host = new Nancy.Hosting.Self.NancyHost(new Uri("http://localhost:" + port))
+    let uri = "http://localhost:" + port
+    let nancy_host = new Nancy.Hosting.Self.NancyHost(new Uri(uri))
     nancy_host.Start()
+    printfn "listening on %s" uri
     while true do Console.ReadLine() |> ignore
     0    
