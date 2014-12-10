@@ -1,1 +1,1 @@
-﻿web: mono webserver/bin/Debug/app.exe
+﻿web: mono webserver/bin/Debug/webserver.exe
