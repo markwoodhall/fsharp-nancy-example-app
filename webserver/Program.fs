@@ -12,7 +12,7 @@ type DemoApp () =
 [<EntryPoint>]
 let main args = 
     let env_port = Environment.GetEnvironmentVariable("PORT")
-    let port = if env_port = null then "1234" else env_port
+    let port = if env_port = null then "5000" else env_port
 
     let nancy_host = new Nancy.Hosting.Self.NancyHost(new Uri("http://localhost:" + port))
     nancy_host.Start()
