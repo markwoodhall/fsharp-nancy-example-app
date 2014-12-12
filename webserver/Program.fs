@@ -5,8 +5,7 @@ open Nancy.Hosting
 
 let getUrl port = 
     let env_port = Environment.GetEnvironmentVariable("PORT")
-    let port = if env_port = null then "5000" else env_port
-    "http://localhost:" + port
+    "http://localhost:" + if env_port = null then string port else env_port
 
 let createLocalHost url =
     let uri = Uri url
@@ -14,7 +13,7 @@ let createLocalHost url =
 
 [<EntryPoint>]
 let main args =
-    let url = getUrl()
+    let url = getUrl 5000
     let host = url |> createLocalHost 
     host.Start()
     printfn "Listening on %s" url
